@@ -1,0 +1,12 @@
+version: '2'
+services:
+    kudoflash-postgresql:
+        container_name: kudoflash-postgresql
+        image: postgres:9.5.3
+        # volumes:
+        #     - ~/volumes/jhipster/kudoflash/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=kudoflash
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

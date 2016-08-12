@@ -20,10 +20,10 @@ spring:
     jackson:
         serialization.indent_output: true
     datasource:
-        url: jdbc:postgresql://localhost:5432/kudoflash
-        name:
-        username: kudoflash
-        password:
+        url: jdbc:postgresql://localhost:9999/flash
+        name: flash
+        username: flash
+        password: 1234
     jpa:
         database-platform: com.flash.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL

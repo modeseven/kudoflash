@@ -1,0 +1,16 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "kudo",
+            "otherEntityName": "kudo",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "owner"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20160812185333",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "owner",
+    "pagination": "no"
+}

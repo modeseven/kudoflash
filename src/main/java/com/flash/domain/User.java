@@ -72,6 +72,10 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Column(name = "reset_date", nullable = true)
     private ZonedDateTime resetDate = null;
+    
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private Set<Kudo> kudos = new HashSet<>();
 
     @JsonIgnore
     @ManyToMany
@@ -176,6 +180,14 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     public void setAuthorities(Set<Authority> authorities) {
         this.authorities = authorities;
+    }
+    
+        public Set<Kudo> getKudos() {
+        return kudos;
+    }
+
+    public void setKudos(Set<Kudo> kudos) {
+        this.kudos = kudos;
     }
 
     @Override

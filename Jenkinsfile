@@ -26,4 +26,8 @@ node {
 
     stage 'packaging'
     sh "./mvnw package -Pprod -DskipTests"
+
+    stage 'deploy'
+    sh "cd target"
+    sh "ls -l"
 }

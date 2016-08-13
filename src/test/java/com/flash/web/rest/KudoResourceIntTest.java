@@ -2,6 +2,7 @@ package com.flash.web.rest;
 
 import com.flash.KudoflashApp;
 import com.flash.domain.Kudo;
+import com.flash.domain.User;
 import com.flash.repository.KudoRepository;
 
 import org.junit.Before;
@@ -82,6 +83,12 @@ public class KudoResourceIntTest {
         kudo = new Kudo();
         kudo.setText(DEFAULT_TEXT);
         kudo.setDate(DEFAULT_DATE);
+        
+        User u = new User();
+        u.setId(1L);
+                
+        
+        kudo.setUser(u);
     }
 
     @Test
@@ -190,6 +197,9 @@ public class KudoResourceIntTest {
         updatedKudo.setId(kudo.getId());
         updatedKudo.setText(UPDATED_TEXT);
         updatedKudo.setDate(UPDATED_DATE);
+        User u = new User();
+        u.setId(1L);
+        updatedKudo.setUser(u);
 
         restKudoMockMvc.perform(put("/api/kudos")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
